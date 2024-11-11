@@ -8,6 +8,10 @@ class Calculator:
         self.master = master
         master.title("Калькулятор")
 
+        # Добавление названия для калькулятора
+        self.title_label = ttk.Label(master, text="Калькулятор", font=("Arial", 24))
+        self.title_label.grid(row=0, column=0, columnspan=5, padx=10, pady=10)
+
         self.result_var = tk.StringVar()
         self.result_var.set("")
         self.history = []  # Список для хранения истории вычислений
@@ -103,7 +107,7 @@ class Calculator:
         elif style == "Темный":
             self.master.config(bg="black")
             self.result_display.config(style='TEntry')
-            ttk.Style().configure('TButton', background='gray', foreground='white')
+            ttk.Style().configure('TButton', background='gray', foreground='black')
         elif style == "Светлый":
             self.master.config(bg="white")
             self.result_display.config(style='TEntry')
